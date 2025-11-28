@@ -5,11 +5,24 @@ This directory contains configuration and setup instructions for running Elastic
 - Docker installed on your machine.
 ## Setup Instructions
 1. Navigate to the `elasticsearch` directory:
-2. use docker compose to start the Elasticsearch service:
+2. make mount directory for elasticsearch data:
+   ```shell
+  sudo mkdir -p ~/esdata
+  sudo chown -R 1000:1000 ~/esdata
+  sudo chmod -R 755 ~/esdata
+   ```
+3. network settings:
+```shell
+docker network ls | grep stack
+```
+```shell
+docker network create stack
+```
+4. use docker compose to start the Elasticsearch service:
    ```shell
    docker compose up -d
    ```
-3. Verify that the Elasticsearch container is running:
+5. Verify that the Elasticsearch container is running:
 ```shell
 curl -u elastic:micgm1Gemini http://localhost:9200
 {
