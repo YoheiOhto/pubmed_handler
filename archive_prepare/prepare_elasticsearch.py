@@ -9,7 +9,6 @@ from tqdm import tqdm
 
 ES_HOST = "http://elasticsearch:9200" 
 ES_PASSWORD = "micgm1Gemini" 
-DB_PATH = "/workspace/0-utils/1-data/pubmed/db/pubmed_n25_0000.db" 
 BULK_SIZE = 5000
 
 INDEX_NAME = "pubmed_sentence"
@@ -40,7 +39,7 @@ es = Elasticsearch(
     request_timeout=60 
 )
 
-DB_DIR = "/workspace/0-utils/1-data/pubmed/db/"
+DB_DIR = "/workspace/99-NAS_data/pubmed/db"
 db_files = glob.glob(os.path.join(DB_DIR, "pubmed_n25_*.db"))
 
 def generate_actions(df, index_name):
