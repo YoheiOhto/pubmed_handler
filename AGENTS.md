@@ -86,14 +86,13 @@
   - `experiments/` または `lib/` 以下に配置する Python コードは、**1ファイルあたり200行以内**に収める必要があります。200行を超える編集・新規作成はフックによりブロックされます。共通ロジックは `lib/` に切り出しモジュール化してください。
 - **mainブランチの保護**:
   - `main` / `master` ブランチへの直接の編集・コミット・チェックアウトは禁止です。
-  - 作業は `work/xxx` ブランチで行い、完了時は `gfinish` で `machine/<hostname>` に集約する。
-  - `gfinish` 完了後、ユーザーに `gpush` の実行を依頼して終了すること。
+  - `gstart` 後は `machine/<hostname>` 上で直接コミットする。完了後はユーザーに `gpush` の実行を依頼すること。
 - **新規ブランチの作成禁止**:
-  - `git checkout -b` / `git switch -c` は使用禁止です。ブランチ作成はユーザーが `gstart` で行います。
+  - `git checkout -b` / `git switch -c` は使用禁止です。
 - **ブランチの強制削除禁止**:
   - `git branch -D` はユーザーに委ねてください。
-- **git merge の制限**:
-  - `machine/*` ブランチ上での merge（`gfinish` が使う）のみ許可されます。それ以外は禁止です。
+- **git merge / rebase の制限**:
+  - `git merge` / `git rebase` はユーザーに委ねてください。
 
 ---
 

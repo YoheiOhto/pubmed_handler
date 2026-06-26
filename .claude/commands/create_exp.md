@@ -1,5 +1,5 @@
 ---
-description: 承認済みの計画書をもとに実験ディレクトリを作成し、計画書を dir 配下へ移動、ブランチを作成する
+description: 承認済みの計画書をもとに実験ディレクトリを作成し、計画書を dir 配下へ移動して実装を開始する
 ---
 
 前提: `/plan-experiment` で `experiments/<NNNN>_<name>.md` の計画書が作成・承認済みであること。
@@ -30,13 +30,7 @@ else
 fi
 ```
 
-## ステップ4: feature ブランチを作成
-```bash
-SAFE_NAME=$(echo "$ARGUMENTS" | tr ' /' '__' | tr -cd '[:alnum:]_-')
-git checkout -b feature/experiment-${SAFE_NAME}
-```
-
-## ステップ5: plan.md に沿って実装
+## ステップ4: plan.md に沿って実装
 `experiments/${CREATED}/` の `experiment.py` / `config.yml` / `run_slurm.sh` を計画書どおりに実装する。
 - plan.md の「実行計画」「リソース見積」を run_slurm.sh に反映する（--time は余裕を持たせる）。
 - 実装の際は、Pythonコードが1ファイル200行を超えないように注意する（超えそうな場合は `lib/` への共通化を行う）。

@@ -34,9 +34,9 @@
 - **一括実行の禁止**: `for / while` ループを用いてシェル上でジョブを一括投入・実行することは禁止。
 - **1ファイル200行制限**: `experiments/` または `lib/` 以下の Python コードは**1ファイル200行以内**に収める。200行超のファイルは hook によりブロックされる。
 - **ブランチルール**: `main` / `master` ブランチへの直接の編集・コミット・チェックアウトは禁止。
-  作業は `work/xxx` ブランチで行い、完了時は `gfinish` で集約 → ユーザーに `gpush` を依頼。
-  `git checkout -b` / `git switch -c`（ブランチ作成）、`git branch -D`（強制削除）も禁止。
-  `git merge` は `machine/*` ブランチ上のみ許可（`gfinish` 用）。
+  `gstart` 後は `machine/<hostname>` 上で直接コミットする。完了後はユーザーに `gpush` を依頼。
+  `git checkout -b` / `git switch -c`（ブランチ作成）、`git branch -D`（強制削除）は禁止。
+  `git merge` / `git rebase` はユーザーに委ねる。
 
 ---
 
