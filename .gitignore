@@ -1,3 +1,6 @@
 data
 *.db
 logs/
+
+# Local Claude backup snapshots
+.claude/backups/
