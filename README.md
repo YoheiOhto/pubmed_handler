@@ -1,5 +1,3 @@
 # pubmed_handler
-pubmed handler
-
-row data downloaded from ncbi ftp (https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/) in 2022
-will update in 2025
+elasticsearch handler for pubmed data
+ここではelasticsearchを用いてpubmedのデータを処理、検索するためのコードを提供しています。
